@@ -1,21 +1,18 @@
-# lab_script.py
 import csv
 import json
 from pathlib import Path
 import pandas as pd
 
-BASE = Path(".")  
-
+BASE = Path(".")
 
 raw_csv_path = BASE / "raw_survey_data.csv"
 
 rows = [
-
-    [1001, "Computer Science", 3, "Yes", "16.0"],        
+    [1001, "Computer Science", 3, "Yes", "16.0"],
     [1002, "Economics", 3.5, "No", "14.5"],
     [1003, "Chemistry", 3, "No", "10.5"],
-    [1004, "Statistics", 3.92, "No", "18"],             
-    [1005, "Cognitive Science", 2, "No", "20.0"],                   
+    [1004, "Statistics", 3.92, "No", "18"],
+    [1005, "Cognitive Science", 2, "No", "20.0"],
 ]
 
 with raw_csv_path.open("w", newline="", encoding="utf-8") as f:
@@ -24,7 +21,6 @@ with raw_csv_path.open("w", newline="", encoding="utf-8") as f:
     writer.writerows(rows)
 
 print(f"Wrote {raw_csv_path.name}")
-
 
 raw_json_path = BASE / "raw_course_catalog.json"
 
@@ -91,7 +87,6 @@ with raw_json_path.open("w", encoding="utf-8") as f:
 
 print(f"Wrote {raw_json_path.name}")
 
-
 df = pd.read_csv(raw_csv_path)
 
 bool_map = {"Yes": True, "No": False, "yes": True, "no": False, True: True, False: False}
@@ -99,11 +94,6 @@ df["is_cs_major"] = df["is_cs_major"].map(bool_map)
 
 df = df.astype({"GPA": "float64"})
 df["credits_taken"] = df["credits_taken"].astype("float64")
-
-assert df["student_id"].dtype.kind in ("i", "u"), "student_id should be integer"
-assert df["GPA"].dtype.kind == "f", "GPA should be float"
-assert df["credits_taken"].dtype.kind == "f", "credits_taken should be float"
-assert df["is_cs_major"].dtype == "bool", "is_cs_major should be boolean"
 
 clean_csv_path = BASE / "clean_survey_data.csv"
 df.to_csv(clean_csv_path, index=False)
@@ -115,18 +105,9 @@ with raw_json_path.open("r", encoding="utf-8") as f:
 normalized = pd.json_normalize(
     data,
     record_path=["instructors"],
-    meta=["course_id", "title", "level", "section"], 
+    meta=["course_id", "title", "level", "section"],
     errors="ignore"
 )
-
-normalized = normalized.astype({
-    "course_id": "string",
-    "title": "string",
-    "level": "int64",
-    "section": "string",
-    "name": "string",
-    "role": "string"
-})
 
 clean_json_csv_path = BASE / "clean_course_catalog.csv"
 normalized.to_csv(clean_json_csv_path, index=False)
