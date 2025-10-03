@@ -1,0 +1,78 @@
+[
+  {
+    "course_id": "DS2002",
+    "section": "001",
+    "title": "Data Science Systems",
+    "level": 2000,
+    "instructors": [
+      {
+        "name": "Austin Rivera",
+        "role": "Primary"
+      },
+      {
+        "name": "Heywood Williams-Tracy",
+        "role": "TA"
+      }
+    ]
+  },
+  {
+    "course_id": "CS3205",
+    "section": "001",
+    "title": "HCI in Software Development",
+    "level": 3000,
+    "instructors": [
+      {
+        "name": "Panagiotis Apostolellis",
+        "role": "Primary"
+      }
+    ]
+  },
+  {
+    "course_id": "DRAM1020",
+    "section": "002",
+    "title": "Speaking in Public",
+    "level": 1000,
+    "instructors": [
+      {
+        "name": "Tovah Close",
+        "role": "Primary"
+      }
+    ]
+  },
+  {
+    "course_id": "CS3140",
+    "section": "002",
+    "title": "Software Development Essentials",
+    "level": 3000,
+    "instructors": [
+      {
+        "name": "Rich Nguyen",
+        "role": "Primary"
+      }
+    ]
+  },
+  {
+    "course_id": "CS3120",
+    "section": "002",
+    "title": "Discrete Math and Theory 2",
+    "level": 3000,
+    "instructors": [
+      {
+        "name": "Ray Pettit",
+        "role": "Primary"
+      }
+    ]
+  },
+  {
+    "course_id": "PSYC2150",
+    "section": "001",
+    "title": "Introduction to Cognition",
+    "level": 2000,
+    "instructors": [
+      {
+        "name": "Mariana Teles",
+        "role": "Primary"
+      }
+    ]
+  }
+]
