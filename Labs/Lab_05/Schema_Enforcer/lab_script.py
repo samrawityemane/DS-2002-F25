@@ -8,11 +8,11 @@ BASE = Path(".")
 raw_csv_path = BASE / "raw_survey_data.csv"
 
 rows = [
-    [1001, "Computer Science", 3, "Yes", "16.0"],
+    [1001, "Computer Science", 2.9, "Yes", "16.0"],
     [1002, "Economics", 3.5, "No", "14.5"],
     [1003, "Chemistry", 3, "No", "10.5"],
     [1004, "Statistics", 3.92, "No", "18"],
-    [1005, "Cognitive Science", 2, "No", "20.0"],
+    [1005, "Cognitive Science", 3, "No", "20.0"],
 ]
 
 with raw_csv_path.open("w", newline="", encoding="utf-8") as f:
